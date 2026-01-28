@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wanita Digital – Lia Idayanti</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    /* ===== SLIDER ===== */
+    .slider {
+      display:flex;
+      gap:1.5rem;
+      overflow-x:auto;
+      scroll-behavior:smooth;
+      padding:0 3rem;
+    }
+
+    .arrow {
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:40px;
+      height:40px;
+      background:#3A2415;
+      color:white;
+      border-radius:999px;
+      z-index:20;
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      min-width:280px;
+      height:360px;
+      border-radius:1rem;
+      overflow:hidden;
+      cursor:pointer;
+      position:relative;
+      transform:scale(.9);
+      transition:all .35s ease;
+      opacity:.7;
+    }
+
+    .card img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:grayscale(100%);
+      transition:all .35s ease;
+    }
+
+    .card-title {
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.6);
+      display:flex;
+      align-items:flex-end;
+      padding:1rem;
+      color:white;
+      font-weight:600;
+    }
+
+    /* ===== HOVER EFFECT DESKTOP ===== */
+    @media (hover:hover) {
+      .slider:hover .card {
+        transform:scale(.85);
+        opacity:.5;
+      }
+
+      .slider .card:hover {
+        transform:scale(1.08);
+        opacity:1;
+        z-index:10;
+      }
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width:768px){
+      .card {
+        min-width:240px;
+        height:320px;
+        transform:scale(1);
+        opacity:1;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[#F7E6CF] text-[#4A2F1B]">
+
+<!-- ================= HERO ================= -->
+<section class="relative h-screen overflow-hidden">
+  <div id="heroSlides" class="absolute inset-0">
+    <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/d1321f3ce5c2f99d098ed4534dddcfced8fd83d2/HERO1.png" class="hero-slide absolute inset-0 w-full h-full object-cover">
+    <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/d1321f3ce5c2f99d098ed4534dddcfced8fd83d2/HERO2.png" class="hero-slide hidden absolute inset-0 w-full h-full object-cover">
+    <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/d1321f3ce5c2f99d098ed4534dddcfced8fd83d2/HERO3.png" class="hero-slide hidden absolute inset-0 w-full h-full object-cover">
+  </div>
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <nav class="absolute top-0 w-full flex justify-between px-6 py-4 text-[#F7E6CF] z-20">
+    <div class="font-semibold">WD</div>
+    <div class="space-x-6 hidden md:block">
+      <a href="#wd">WD Class</a>
+      <a href="#private">Private</a>
+      <a href="#digital">Digital</a>
+      <a href="#plr">PLR</a>
+    </div>
+  </nav>
+
+  <button onclick="prevHero()" class="arrow left-6">❮</button>
+  <button onclick="nextHero()" class="arrow right-6">❯</button>
+</section>
+
+   <!-- ================= ABOUT ================= -->
+<section class="bg-[#4A2F1B] text-[#F7E6CF] py-20 px-6">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/3d49aa6a5aa62ca8e36888878f59af598452004c/about.png" class="rounded-xl">
+    <div>
+      <p class="uppercase text-sm mb-2">Founder Wanita Digital</p>
+      <h2 class="text-3xl font-bold mb-4">Lia Idayanti</h2>
+      <p class="text-sm mb-6">
+        Membantu perempuan membangun personal branding, skill digital,
+        dan penghasilan berkelanjutan.
+      </p>
+      <div class="flex gap-4 mb-6">
+        <a href="#wd" class="border px-4 py-2 rounded">More Info</a>
+        <a href="#digital" class="border px-4 py-2 rounded">Portfolio</a>
+      </div>
+      <p class="bg-[#F7E6CF] text-[#4A2F1B] p-4 rounded">
+        Kamu nggak sendirian, kita tumbuh bareng.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PILIHAN PRODUK ================= -->
+<section class="py-20 px-6">
+  <h2 class="text-3xl font-semibold text-center mb-12">
+    Pilihan Produk
+  </h2>
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <!-- WD Class -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/3a3c722783a2c70fd43c369b8375fe039b1d7610/CLASS.png" alt="WD Class" class="w-full h-40 object-cover">
+      <div class="p-5">
+        <h3 class="text-lg font-semibold mb-2">WD Class</h3>
+        <p class="text-sm mb-4">
+          Kelas digital intensif untuk perempuan bertumbuh.
+        </p>
+        <a href="#wd"
+           class="inline-block bg-[#4A2F1B] text-[#F7E6CF] px-4 py-2 rounded text-sm hover:opacity-90">
+          Cek di sini
+        </a>
+      </div>
+    </div>
+
+    <!-- Private Class -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/ca6806215f9ca3b737bd7c225642f1d5e4394a73/private%20class.png" alt="Private Class" class="w-full h-40 object-cover">
+      <div class="p-5">
+        <h3 class="text-lg font-semibold mb-2">Private Class</h3>
+        <p class="text-sm mb-4">
+          Pendampingan personal sesuai kebutuhanmu.
+        </p>
+        <a href="#private"
+           class="inline-block bg-[#4A2F1B] text-[#F7E6CF] px-4 py-2 rounded text-sm hover:opacity-90">
+          Cek di sini
+        </a>
+      </div>
+    </div>
+
+    <!-- Digital Product -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/ca6806215f9ca3b737bd7c225642f1d5e4394a73/digital%20product.png" alt="Digital Product" class="w-full h-40 object-cover">
+      <div class="p-5">
+        <h3 class="text-lg font-semibold mb-2">Digital Product</h3>
+        <p class="text-sm mb-4">
+          Produk digital siap pakai & scalable.
+        </p>
+        <a href="#digital"
+           class="inline-block bg-[#4A2F1B] text-[#F7E6CF] px-4 py-2 rounded text-sm hover:opacity-90">
+          Cek di sini
+        </a>
+      </div>
+    </div>
+
+    <!-- PLR Product -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/ca6806215f9ca3b737bd7c225642f1d5e4394a73/plr%20product.png" alt="PLR Product" class="w-full h-40 object-cover">
+      <div class="p-5">
+        <h3 class="text-lg font-semibold mb-2">PLR Product</h3>
+        <p class="text-sm mb-4">
+          Produk PLR siap rebrand & dijual ulang.
+        </p>
+        <a href="#plr"
+           class="inline-block bg-[#4A2F1B] text-[#F7E6CF] px-4 py-2 rounded text-sm hover:opacity-90">
+          Cek di sini
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= WD CLASS ================= -->
+<section id="wd" class="py-20 px-6">
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-6">
+  <!-- KIRI -->
+  <div>
+    <span
+  class="inline-block mb-1 px-4 py-1 text-xs font-semibold uppercase
+         bg-white text-[#4A2F1B]
+         border border-[#4A2F1B]
+         rounded-full tracking-wide">
+  WD Class
+</span>
+    <h2 class="text-3xl font-bold leading-tight">
+      Kelas Wanita Digital
+    </h2>
+    <p class="text-sm max-w-xl">
+      Gabung bareng komunitas Wanita digital yang bukan cuma belajar, tapi juga tumbuh bareng dan saling dukung sampai cuan bareng
+    </p>
+  </div>
+
+  <!-- KANAN -->
+  <a href="https://wa.me/6285845540724"
+     class="inline-flex items-center justify-center bg-[#4A2F1B] text-[#F7E6CF] px-6 py-3 rounded-full text-sm font-medium hover:opacity-90 transition">
+    Tanya Detail Kelas
+  </a>
+</div>
+<div class="relative">
+    <button onclick="scrollSlider('wdSlider',-1)" class="arrow left-0">❮</button>
+    <div id="wdSlider" class="slider">
+      <div class="card" onclick="openModal('Kelas Premium WD','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/9e10af9b4acb166850aefcc5ac1a3336a3d256ad/fullpremium.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/9e10af9b4acb166850aefcc5ac1a3336a3d256ad/Untitled%20design%20(9).png"><div class="card-title">Kelas Premium WD</div>
+      </div>
+      <div class="card" onclick="openModal('Miniclass Canva','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/9e10af9b4acb166850aefcc5ac1a3336a3d256ad/fullcanva.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/9e10af9b4acb166850aefcc5ac1a3336a3d256ad/modalcanva.png"><div class="card-title">Miniclass Canva</div>
+      </div>
+      <div class="card" onclick="openModal('Miniclass AI','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/9e10af9b4acb166850aefcc5ac1a3336a3d256ad/fullAI.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/9e10af9b4acb166850aefcc5ac1a3336a3d256ad/modalAI.png"><div class="card-title">Miniclass AI</div>
+      </div>
+      <div class="card" onclick="openModal('Landing Page','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/9e10af9b4acb166850aefcc5ac1a3336a3d256ad/fullLP.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/9e10af9b4acb166850aefcc5ac1a3336a3d256ad/modalLP.png"><div class="card-title">Landing Page</div>
+      </div>
+      <div class="card" onclick="openModal('Game Interaktif','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/9e10af9b4acb166850aefcc5ac1a3336a3d256ad/fullgame.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/9e10af9b4acb166850aefcc5ac1a3336a3d256ad/modalgame.png"><div class="card-title">Game Interaktif</div>
+      </div>
+    </div>
+    <button onclick="scrollSlider('wdSlider',1)" class="arrow right-0">❯</button>
+  </div>
+</section>
+
+<!-- ================= PRIVATE ================= -->
+<section id="private" class="py-20 px-6 bg-[#F1DCC2]">
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-6">
+  <!-- KIRI -->
+  <div>
+    <span
+      class="inline-block mb-1 px-4 py-1 text-xs font-semibold uppercase
+             bg-white text-[#4A2F1B]
+             border border-[#4A2F1B]
+             rounded-full tracking-wide">
+      Private Class
+    </span>
+
+    <h2 class="text-3xl font-bold leading-tight">
+      Kelas Belajar Privat
+    </h2>
+
+    <p class="text-sm max-w-xl">
+      Buat kamu yang pengin bimbingan lebih dekat bareng aku, kita gali bareng arah, strategi, dan jalan digitalmu biar makin jelas dan mantap
+    </p>
+  </div>
+
+  <!-- KANAN -->
+  <a href="https://wa.me/6285845540724"
+     class="bg-[#4A2F1B] text-[#F7E6CF]
+            px-6 py-3 rounded-full text-sm font-medium
+            hover:opacity-90 transition">
+    Tanya Detail Kelas
+  </a>
+</div>
+  <div class="relative">
+    <button onclick="scrollSlider('privateSlider',-1)" class="arrow left-0">❮</button>
+    <div id="privateSlider" class="slider">
+      <div class="card" onclick="openModal('Private 1 Bulan','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/97a0506a957f2cfe794e5aaa2f16eba2944e0f30/fullprivate30.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/97a0506a957f2cfe794e5aaa2f16eba2944e0f30/modalprivate30.png"><div class="card-title">Private 1 Bulan</div>
+      </div>
+      <div class="card" onclick="openModal('Private Lifetime','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/97a0506a957f2cfe794e5aaa2f16eba2944e0f30/fullprivatelife.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/97a0506a957f2cfe794e5aaa2f16eba2944e0f30/modalprivatlife.png"><div class="card-title">Private Lifetime</div>
+      </div>
+      <div class="card" onclick="openModal('8 Days Miniclass','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/97a0506a957f2cfe794e5aaa2f16eba2944e0f30/full8hariminiclass.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/97a0506a957f2cfe794e5aaa2f16eba2944e0f30/8hariminiclass.png"><div class="card-title">8 Days Miniclass</div>
+      </div>
+    </div>
+    <button onclick="scrollSlider('privateSlider',1)" class="arrow right-0">❯</button>
+  </div>
+</section>
+
+<!-- ================= DIGITAL ================= -->
+<section id="digital" class="py-20 px-6">
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-6">
+  <!-- KIRI -->
+  <div>
+    <span
+      class="inline-block mb-1 px-4 py-1 text-xs font-semibold uppercase
+             bg-white text-[#4A2F1B]
+             border border-[#4A2F1B]
+             rounded-full tracking-wide">
+      Digital Product
+    </span>
+
+    <h2 class="text-3xl font-bold leading-tight">
+      Produk Digital Bantu Kamu Grow
+    </h2>
+
+    <p class="text-sm max-w-xl">
+      Lengkapi perjalanan digitalmu dengan panduan dan tools praktis biar nggak bingung mulai. Semua sudah siap kamu pakai langsung!
+    </p>
+  </div>
+
+  <!-- KANAN -->
+  <a href="https://wa.me/6285845540724"
+     class="bg-[#4A2F1B] text-[#F7E6CF]
+            px-6 py-3 rounded-full text-sm font-medium
+            hover:opacity-90 transition">
+    Tanya Detail Kelas
+  </a>
+</div>
+
+  <div class="relative">
+    <button onclick="scrollSlider('digitalSlider',-1)" class="arrow left-0">❮</button>
+    <div id="digitalSlider" class="slider">
+      <div class="card" onclick="openModal('Custom GPT','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/d28b1aedce8e4be01d17d96b5409bc359f1bba8c/fullcustomgpt.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/d28b1aedce8e4be01d17d96b5409bc359f1bba8c/modalcustomgptkak.png"><div class="card-title">Custom GPT</div>
+      </div>
+      <div class="card" onclick="openModal('Personal Branding','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/d28b1aedce8e4be01d17d96b5409bc359f1bba8c/fullnulisthreads.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/d28b1aedce8e4be01d17d96b5409bc359f1bba8c/modalnulisthreads.png"><div class="card-title">Personal Branding</div>
+      </div>
+      <div class="card" onclick="openModal('Branding Class','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/d28b1aedce8e4be01d17d96b5409bc359f1bba8c/fullbrandingclass.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/d28b1aedce8e4be01d17d96b5409bc359f1bba8c/modalbrandingclass.png"><div class="card-title">Branding Class</div>
+      </div>
+      <div class="card" onclick="openModal('Audio Journey','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/d28b1aedce8e4be01d17d96b5409bc359f1bba8c/fullaudio.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/d28b1aedce8e4be01d17d96b5409bc359f1bba8c/modalaudio.png"><div class="card-title">Audio Journey</div>
+      </div>
+    </div>
+    <button onclick="scrollSlider('digitalSlider',1)" class="arrow right-0">❯</button>
+  </div>
+</section>
+
+<!-- ================= PLR ================= -->
+<section id="plr" class="py-20 px-6 bg-[#F1DCC2]">
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-6">
+  <!-- KIRI -->
+  <div>
+    <span
+      class="inline-block mb-1 px-4 py-1 text-xs font-semibold uppercase
+             bg-white text-[#4A2F1B]
+             border border-[#4A2F1B]
+             rounded-full tracking-wide">
+      Digital Product PLR
+    </span>
+
+    <h2 class="text-3xl font-bold leading-tight">
+      Produk Digital Bisa Dijual Kembali
+    </h2>
+
+    <p class="text-sm max-w-xl">
+     Mau punya produk digital siap jual tanpa repot bikin dari nol? Koleksi PLR ini bisa jadi jalan pintas cerdas buat mulai monetisasi online-mu
+    </p>
+  </div>
+
+  <!-- KANAN -->
+  <a href="https://wa.me/6285845540724"
+     class="bg-[#4A2F1B] text-[#F7E6CF]
+            px-6 py-3 rounded-full text-sm font-medium
+            hover:opacity-90 transition">
+    Tanya Detail Kelas
+  </a>
+</div>
+
+  <div class="relative">
+    <button onclick="scrollSlider('plrSlider',-1)" class="arrow left-0">❮</button>
+    <div id="plrSlider" class="slider">
+      <div class="card" onclick="openModal('PLR Bundle','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/cf2d1be5d83a498d4c2d38eb9bcd7ebf5544502e/34.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/cf2d1be5d83a498d4c2d38eb9bcd7ebf5544502e/33.png"><div class="card-title">PLR Bundle</div>
+      </div>
+      <div class="card" onclick="openModal('Affiliate TikTok','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/cf2d1be5d83a498d4c2d38eb9bcd7ebf5544502e/38.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/cf2d1be5d83a498d4c2d38eb9bcd7ebf5544502e/37.png"><div class="card-title">Affiliate TikTok</div>
+      </div>
+      <div class="card" onclick="openModal('Planner Personal','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/cf2d1be5d83a498d4c2d38eb9bcd7ebf5544502e/40.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/cf2d1be5d83a498d4c2d38eb9bcd7ebf5544502e/39.png"><div class="card-title">Planner Personal</div>
+      </div>
+      <div class="card" onclick="openModal('Bank Konten','https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/cf2d1be5d83a498d4c2d38eb9bcd7ebf5544502e/36.png','#')">
+        <img src="https://raw.githubusercontent.com/oppieandarae-afk/Liaidayanti/cf2d1be5d83a498d4c2d38eb9bcd7ebf5544502e/35.png"><div class="card-title">Bank Konten</div>
+      </div>
+    </div>
+    <button onclick="scrollSlider('plrSlider',1)" class="arrow right-0">❯</button>
+  </div>
+</section>
+  <!-- ================= FAQ ================= -->
+<section id="faq" class="bg-[#4A2F1B] text-[#F7E6CF] py-20 px-6">
+  <h2 class="text-3xl font-semibold text-center mb-10">FAQ</h2>
+  <div class="max-w-3xl mx-auto space-y-4">
+    <details class="bg-[#3A2415] p-4 rounded">
+      <summary class="cursor-pointer font-medium">Apakah cocok untuk pemula?</summary>
+      <p class="mt-2 text-sm">Sangat cocok, semua materi disusun step by step.</p>
+    </details>
+    <details class="bg-[#3A2415] p-4 rounded">
+      <summary class="cursor-pointer font-medium">Apakah bisa diakses selamanya?</summary>
+      <p class="mt-2 text-sm">Beberapa kelas bersifat lifetime, tergantung produk.</p>
+    </details>
+    <details class="bg-[#3A2415] p-4 rounded">
+      <summary class="cursor-pointer font-medium">Apakah ada pendampingan?</summary>
+      <p class="mt-2 text-sm">Tersedia pendampingan di WD Class & Private.</p>
+    </details>
+    <details class="bg-[#3A2415] p-4 rounded">
+      <summary class="cursor-pointer font-medium">Bagaimana sistem pembayarannya?</summary>
+      <p class="mt-2 text-sm">Pembayaran dilakukan via link checkout resmi.</p>
+    </details>
+    <details class="bg-[#3A2415] p-4 rounded">
+      <summary class="cursor-pointer font-medium">Apakah bisa dijual ulang?</summary>
+      <p class="mt-2 text-sm">Khusus produk PLR, boleh direbrand & dijual ulang.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-[#2A1A10] text-[#F7E6CF] py-10 text-center">
+  <div class="flex justify-center gap-6 mb-4">
+    <a href="#">Instagram</a><a href="#">Threads</a><a href="#">WhatsApp</a>
+  </div>
+  <p class="text-sm">© 2026 Wanita Digital – Lia Idayanti</p>
+</footer>
+
+<!-- ================= MODAL ================= -->
+<div id="modal" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50">
+  <button onclick="closeModal()" class="absolute top-6 right-6 text-white text-2xl">✕</button>
+  <div class="max-w-3xl text-center px-6">
+    <img id="modalImg" class="rounded-xl mb-6 mx-auto">
+    <h2 id="modalTitle" class="text-white text-2xl font-semibold mb-4"></h2>
+    <a id="modalLink" href="#" class="bg-[#F7E6CF] text-[#4A2F1B] px-6 py-3 rounded">
+      Checkout Produk
+    </a>
+  </div>
+</div>
+
+<script>
+  let heroIndex=0;
+  const heroSlides=document.querySelectorAll('.hero-slide');
+  function showHero(i){heroSlides.forEach(s=>s.classList.add('hidden'));heroSlides[i].classList.remove('hidden')}
+  function nextHero(){heroIndex=(heroIndex+1)%heroSlides.length;showHero(heroIndex)}
+  function prevHero(){heroIndex=(heroIndex-1+heroSlides.length)%heroSlides.length;showHero(heroIndex)}
+  setInterval(nextHero,5000)
+
+  function scrollSlider(id,dir){
+    document.getElementById(id).scrollBy({left:dir*320,behavior:'smooth'})
+  }
+
+  const modal=document.getElementById('modal')
+  function openModal(title,img,link){
+    modal.classList.remove('hidden')
+    modal.classList.add('flex')
+    modal.querySelector('#modalTitle').innerText=title
+    modal.querySelector('#modalImg').src=img
+    modal.querySelector('#modalLink').href=link
+  }
+  function closeModal(){
+    modal.classList.add('hidden')
+    modal.classList.remove('flex')
+  }
+</script>
+
+</body>
+</html>
